@@ -8,6 +8,7 @@ from pathlib import Path
 from astrbot.api import star
 from astrbot.api.event import AstrMessageEvent, MessageEventResult, filter
 from astrbot.api.message_components import ActionRow, At, Button, Plain
+from astrbot.core.platform.message_type import MessageType
 
 from .clock import Clock
 from .defaults import DEFAULT_RANGES
@@ -77,7 +78,14 @@ def _reply(
         A chain of the mention (when enabled), the text and, on QQ official
         bots, one button that reruns the query for whoever clicks it.
     """
-    chain = [At(qq=event.get_sender_id()), Plain(text)] if mention else [Plain(text)]
+    # QQ rejects `<qqbot-at-user>` in C2C messages, so the mention is limited to
+    # group chats.
+    in_group = event.get_message_type() == MessageType.GROUP_MESSAGE
+    chain = (
+        [At(qq=event.get_sender_id()), Plain(text)]
+        if mention and in_group
+        else [Plain(text)]
+    )
     platform = event.get_platform_name() or ""
     if any(platform.startswith(name) for name in _BUTTON_PLATFORMS):
         chain.append(
