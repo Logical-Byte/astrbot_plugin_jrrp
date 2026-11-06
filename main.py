@@ -24,21 +24,21 @@ from .luck import (
 from .storage import JrrpStore
 
 #: Words that ask for today's luck; the reference plugin answers them without a prefix.
-_TODAY = re.compile(r"^\s*[/／]?\s*(?:jrrp|今日人品|今日运势)\s*$", re.IGNORECASE)
+_TODAY = re.compile(r"^\s*(?:jrrp|今日人品|今日运势)\s*$", re.IGNORECASE)
 
 #: Words that ask for the all-time average.
 _ALL = re.compile(
-    r"^\s*[/／]?\s*(?:alljrrp|总人品|平均人品|平均运势)\s*$", re.IGNORECASE
+    r"^\s*(?:alljrrp|总人品|平均人品|平均运势)\s*$", re.IGNORECASE
 )
 
 #: Words that ask for this month's average.
 _MONTH = re.compile(
-    r"^\s*[/／]?\s*(?:monthjrrp|本月人品|本月运势|月运势)\s*$", re.IGNORECASE
+    r"^\s*(?:monthjrrp|本月人品|本月运势|月运势)\s*$", re.IGNORECASE
 )
 
 #: Words that ask for this week's average.
 _WEEK = re.compile(
-    r"^\s*[/／]?\s*(?:weekjrrp|本周人品|本周运势|周运势)\s*$", re.IGNORECASE
+    r"^\s*(?:weekjrrp|本周人品|本周运势|周运势)\s*$", re.IGNORECASE
 )
 
 
