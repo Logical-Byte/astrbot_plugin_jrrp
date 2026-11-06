@@ -1,0 +1,23 @@
+{
+  "ranges": {
+    "type": "text",
+    "description": "运势等级区间（JSON 数组，留空则使用内置 10 档）",
+    "default": "[\n  {\n    \"min\": 100,\n    \"max\": 100,\n    \"level\": \"超吉\",\n    \"description\": \"100！100诶！！你就是欧皇？\"\n  },\n  {\n    \"min\": 76,\n    \"max\": 99,\n    \"level\": \"大吉\",\n    \"description\": \"好耶！今天运气真不错呢\"\n  },\n  {\n    \"min\": 66,\n    \"max\": 75,\n    \"level\": \"吉\",\n    \"description\": \"哦豁，今天运气还顺利哦\"\n  },\n  {\n    \"min\": 63,\n    \"max\": 65,\n    \"level\": \"半吉\",\n    \"description\": \"emm，今天运气一般般呢\"\n  },\n  {\n    \"min\": 59,\n    \"max\": 62,\n    \"level\": \"小吉\",\n    \"description\": \"还……还行吧，今天运气稍差一点点呢\"\n  },\n  {\n    \"min\": 54,\n    \"max\": 58,\n    \"level\": \"末小吉\",\n    \"description\": \"唔……今天运气有点差哦\"\n  },\n  {\n    \"min\": 19,\n    \"max\": 53,\n    \"level\": \"末吉\",\n    \"description\": \"呜哇，今天运气应该不太好\"\n  },\n  {\n    \"min\": 10,\n    \"max\": 18,\n    \"level\": \"凶\",\n    \"description\": \"啊这……（没错……是百分制），今天还是吃点好的吧\"\n  },\n  {\n    \"min\": 1,\n    \"max\": 9,\n    \"level\": \"大凶\",\n    \"description\": \"啊这……（个位数可还行），今天还是吃点好的吧\"\n  },\n  {\n    \"min\": 0,\n    \"max\": 0,\n    \"level\": \"超凶（大寄）\",\n    \"description\": \"？？？反向欧皇？\"\n  }\n]",
+    "editor_mode": "json"
+  },
+  "time_sync": {
+    "type": "bool",
+    "description": "启动时向 bjtime.org.cn 校时（失败自动退回本地时钟）",
+    "default": true
+  },
+  "sync_timeout": {
+    "type": "float",
+    "description": "校时请求超时（秒）",
+    "default": 5.0
+  },
+  "mention": {
+    "type": "bool",
+    "description": "回复时 @ 发起人（QQ 官方卡片下若出现多余空行可关闭）",
+    "default": true
+  }
+}
