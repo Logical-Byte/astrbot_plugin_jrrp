@@ -1,7 +1,7 @@
 name: astrbot_plugin_jrrp
 display_name: 今日人品
 desc: 查询今日、本周、本月与历史平均人品；结果按「日期+用户」确定性生成并持久化。
-version: 0.1.1
+version: 0.1.2
 author: Logical-Byte
 repo: https://github.com/Logical-Byte/astrbot_plugin_jrrp
 astrbot_version: ">=4.29.0"
